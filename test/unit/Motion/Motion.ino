@@ -14,4 +14,4 @@ void loop() {
     digitalWrite(pir, 0); // ไฟดับ
   }
   delay(100);
-} 
+}
