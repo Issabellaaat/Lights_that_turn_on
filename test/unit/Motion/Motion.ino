@@ -7,7 +7,7 @@ void setup() {
 void loop() {
     x = digitalRead(pir); // อ่านค่าจากเซนเซอร์ PIR
     Serial.print("x : ");
-    Serial.println(val); // พิมพ์ค่าที่จับได้จาก PIR
+    Serial.println(x); // พิมพ์ค่าที่จับได้จาก PIR
   if (x == 1) { // ถ้าค่า PIR เป็น 1 แสดงว่าตรวจพบวัตถุ สั่งเปิดไฟ LED
     digitalWrite(pir, 1); //ไฟติด
   }else {
