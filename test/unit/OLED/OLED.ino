@@ -25,7 +25,7 @@ void loop() {
   oled.setCursor(0, 21);
   oled.setTextSize(1);
   oled.println("1427");
-
+  
   oled.display();
   delay(10);
 }
