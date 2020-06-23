@@ -23,7 +23,7 @@ void setup()
 {
     Serial.begin(9600);
   pinMode(PIR_pin,INPUT);
-  pinMode(PWM_pin,OUTPUT); //<-------
+  pinMode(PWM_pin,OUTPUT); 
   digitalWrite(PIR_pin, LOW);
 
   pinMode(buzzer,OUTPUT);    
