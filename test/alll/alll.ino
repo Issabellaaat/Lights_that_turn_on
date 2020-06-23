@@ -52,27 +52,34 @@ void motion(){
             inc_val = inc_val +1;
             if (inc_val>255){
                 inc_val = 255;       
-                digitalWrite(buzzer,HIGH); 
-    delay(100);       
+                   
             }
             delay(500);
         }        
-        else 
-        {
-        inc_val = inc_val -1;
-        if (inc_val<0){
+        else {
+            inc_val = inc_val -1;
+            if (inc_val<0){
             inc_val = 0;
             on_state = 0;
         }
         delay(500);
-        }    
-    }else 
-    {
+        }               
+    }else {
     time_old = millis();
     }
+
     digitalWrite(PWM_pin, inc_val);
+    if (on_state == 1) {
+         digitalWrite(buzzer,HIGH); 
+         delay(200);
+        digitalWrite(buzzer,LOW); 
+        delay(500);
+    }else{
+        digitalWrite(buzzer,LOW); 
+    }
     Serial.print(inc_val);
 }
+
 void ultra(){
 digitalWrite(trig, LOW);
   delayMicroseconds(2);
