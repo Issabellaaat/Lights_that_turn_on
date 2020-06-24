@@ -10,16 +10,16 @@
 - บุคคลทั่วไปที่ต้องการติดตั้งการเปิดไฟแบบอัตโนมัติภายในบ้านเพื่ออำนวยความสะดวก
 
 ## รายละเอียดโปรเจค
-## Perception Module
+### Perception Module
 - Motion detector
 - Ultrasonic distance
 
-## Behavior
+### Behavior
 1. ตรวจจับว่ามีคนผ่านหรือไม่
 2. รับค่าแล้วพบคนไฟติด
 3. วัดระยะห่างระหว่างคนกับเซนเซอร์
 
-## Mainpulation
+### Mainpulation
 1. OLED 0.91” Display I2C
 2. ไฟบนบอร์ด
 3. Active buzzer
