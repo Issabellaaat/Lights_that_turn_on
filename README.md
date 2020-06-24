@@ -20,9 +20,9 @@
 3. วัดระยะห่างระหว่างคนกับเซนเซอร์
 
 ### Mainpulation
-1. OLED 0.91” Display I2C
-2. ไฟบนบอร์ด
-3. Active buzzer
+- OLED 0.91” Display I2C
+- ไฟบนบอร์ด
+- Active buzzer
 
 ## โครงสร้างพื้นฐาน
 ![Capture](https://user-images.githubusercontent.com/61343377/85525627-73c37c80-b633-11ea-9d0f-da1bc34b3dce.PNG)
