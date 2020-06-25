@@ -21,7 +21,7 @@ Adafruit_SSD1306 oled = Adafruit_SSD1306(128, 32, &Wire);
 
 void setup() 
 {
-    Serial.begin(9600);
+  Serial.begin(9600);
   pinMode(PIR_pin,INPUT);
   pinMode(PWM_pin,OUTPUT); 
   digitalWrite(PIR_pin, LOW);
@@ -52,7 +52,7 @@ void loop()
             if (inc_val>255){
                 inc_val = 255;               
             }
-            delay(500);
+            delay(dim_delay);
         }        
         else {
         inc_val = inc_val -1;
@@ -60,7 +60,7 @@ void loop()
             inc_val = 0;
             on_state = 0;
         }
-        delay(500);
+        delay(dim_delay);
         }   
     }  
     else {
@@ -69,29 +69,38 @@ void loop()
 
     if (on_state == 1) {
      digitalWrite(buzzer,HIGH); 
-    delay(2); 
-    digitalWrite(buzzer,LOW);
-    delay(1000); 
-    }
-    
-   
+     delay(2); 
+     digitalWrite(buzzer,LOW);
+     delay(100); 
+    }else {
+     noTone(buzzer);
+    }   
     digitalWrite(PWM_pin, inc_val);
     Serial.print(inc_val);
 
-   digitalWrite(trig, LOW);
-  delayMicroseconds(2);
-  digitalWrite(trig, HIGH);
-  delayMicroseconds(10);
-  digitalWrite(trig, LOW);
-  Time = pulseIn(echo, HIGH);
-  distance = Time * 0.034 / 2;
+    if (on_state == 1) {
+     digitalWrite(trig, LOW);
+     delayMicroseconds(2);
+     digitalWrite(trig, HIGH);
+     delayMicroseconds(10);
+     digitalWrite(trig, LOW);
+     Time = pulseIn(echo, HIGH);
+     distance = Time * 0.034 / 2;
 
-  oled.clearDisplay();
-  oled.setCursor(0, 0);
-  oled.setTextSize(2);
-  oled.print("Distance: ");
-  oled.println(distance);
-  oled.print(" cm.");
-  oled.display();
-  delay(1000); 
+     oled.clearDisplay();
+     oled.setCursor(0, 0);
+     oled.setTextSize(2);
+     oled.print("Distance: ");
+     oled.println(distance);
+     oled.display();
+     delay(250); 
+     }
+    if (on_state == 0) {
+      oled.clearDisplay();
+      oled.setCursor(0, 0);
+      oled.setTextSize(2);
+      oled.print("---");
+      oled.display();
+      delay(250); 
+    }
 }
