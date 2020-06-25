@@ -36,6 +36,7 @@ void loop() {
     else {
     time_old = millis();
     }
-    
+    digitalWrite(PWM_pin, inc_val);
+    Serial.print(inc_val);
 } 
 
